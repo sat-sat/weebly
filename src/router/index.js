@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Container from 'components/container/container'
+import Page from 'components/page/page'
 
 Vue.use(VueRouter)
 
@@ -9,8 +9,8 @@ const router = new VueRouter({
   routes: [
     {
       path: '/*',
-      name: 'Main Container',
-      component: Container
+      name: 'Main Page',
+      component: Page
     }
   ]
 })

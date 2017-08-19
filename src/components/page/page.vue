@@ -1,4 +1,4 @@
-<template lang='pug' src='./container.pug'></template>
+<template lang='pug' src='./page.pug'></template>
 
 <script>
 // components
