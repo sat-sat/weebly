@@ -1,3 +1,8 @@
+*
+  font-family: $font-family-sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
 h1, .h1, %h1
   margin: 0
   line-height: 1.2
@@ -35,10 +40,11 @@ h4, .h4, %h4
 
 %p1
   line-height: 1.618
-  font-size: rem-calc(18)
+  letter-spacing: 0.04em
+  font-size: rem-calc(16)
 
   @media (min-width: $screen-md-min)
-    font-size: rem-calc(18)
+    font-size: rem-calc(16)
 
 %p2
   line-height: 1.618
