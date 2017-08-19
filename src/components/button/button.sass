@@ -2,17 +2,28 @@
   @extend %p1
   display: inline-block
   transition: all 0.2s ease
-  border-radius: rem-calc(2)
-  padding: rem-calc(9) rem-calc(24)
-  font-family: 'Lato'
+  border-radius: rem-calc(3)
+  padding: rem-calc(7) rem-calc(22)
+  box-sizing: border-box !important
 
   &:hover
     cursor: pointer
 
-  &--add
+  &--light
+    border: 2px solid $c3
+    color: $c5
+
+    &:hover
+      border-color: $c4
+      background-color: $c4
+      color: $c2
+
+  &--dark
+    border: 2px solid $c1
     background-color: $c1
     color: $c2
     font-weight: 400
 
     &:hover
+      border-color: $c1-dark
       background-color: $c1-dark
