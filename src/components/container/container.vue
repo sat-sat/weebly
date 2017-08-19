@@ -4,11 +4,13 @@
 // components
 import ButtonAdd from 'components/button/button-add/button-add'
 import ButtonExport from 'components/button/button-export/button-export'
+import ButtonImport from 'components/button/button-import/button-import'
 
 export default {
   components: {
     ButtonAdd,
-    ButtonExport
+    ButtonExport,
+    ButtonImport
   }
 }
 </script>
