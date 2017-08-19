@@ -1,13 +1,7 @@
 <template lang='pug' src='./app.pug'></template>
 
 <script>
-// components
-import Navigation from 'components/navigation/navigation'
-
 export default {
-  components: {
-    Navigation
-  },
   name: 'app'
 }
 </script>

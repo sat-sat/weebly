@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/pages/home/home'
-import OurPractice from '@/pages/our-practice/our-practice'
-import PageNotFound from '@/pages/404/404'
+import Container from 'components/container/container'
 
 Vue.use(VueRouter)
 
@@ -10,20 +8,9 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'home',
-      description: 'Home page description',
-      component: Home
-    },
-    {
-      path: '/our-practice',
-      name: 'our-practice',
-      component: OurPractice
-    },
-    {
       path: '/*',
-      name: 'page-not-found',
-      component: PageNotFound
+      name: 'Main Container',
+      component: Container
     }
   ]
 })

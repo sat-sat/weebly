@@ -5,9 +5,15 @@ $bootstrap-sass-asset-helper: false !default;
 
 
 // Project Globals
+$c1: #0076ff;
+$c2: #ffffff;
+$c3: #d5d8de;
+$c4: #818f9d;
+$c5: #3e4455;
+$c6: #161616;
 
 // grid
-$max-width: rem-calc(1235); // adjust to project
+$max-width: rem-calc(767); // adjust to project
 
 // ------------------------
 
@@ -50,13 +56,16 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$font-family-sans-serif:  'Lato', sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          14px !default;
+$font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
