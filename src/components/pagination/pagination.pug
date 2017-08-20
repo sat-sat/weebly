@@ -1,0 +1,11 @@
+.pagination
+  
+  .pagination__arrow.pagination__arrow--prev(:class='[ selected === 1 ? "pagination__arrow--disabled" : "" ]' @click='pageDown')
+    img(src='../../assets/images/arrow-left.png')
+
+  .pagination__select
+    select(v-model='selected')
+      option(v-for='(page, index) in pages' :value='index + 1') {{ index + 1 }}
+
+  .pagination__arrow.pagination__arrow--next(:class='[ selected === (pages.length) ? "pagination__arrow--disabled" : "" ]' @click='pageUp')
+    img(src='../../assets/images/arrow-right.png')
