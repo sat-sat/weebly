@@ -2,22 +2,33 @@
 
   table.products__table
     
+    //- header row
     tr.products__header-row
-      th.products__table-col-1
+      th
         input.products__checkbox(type='checkbox')
-
-      th.products__table-col-2
+      th
         | Name
         span
-
-      th.products__table-col-3
+      th
         | Type
         span
-
-      th.products__table-col-4
+      th
         | Price
         span
-
-      th.products__table-col-5
+      th
         | Inventory
         span
+
+    //- product row
+    tr.products__single-product-row
+      td
+        input.products__checkbox(type='checkbox')
+      td
+        img.products__product-thumb(src='http://frontend-trial-project.weebly.com/uploads/1/0/5/4/105462933/27890e0eddd8e800fc2c8fc1c434744d.png')
+        .products__product-name Snapback Hat
+      td
+        .products__product-type Physical
+      td
+        .products__product-price $15.67
+      td
+        .products__product-inventory 200
