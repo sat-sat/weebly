@@ -1,0 +1,24 @@
+.page-size
+  @extend %p2
+  color: $c5
+
+  &__select
+    display: inline-block
+    margin-left: rem-calc(17)
+
+    select
+      @extend %p1
+      border: 1px solid $c3
+      border-radius: rem-calc(3)
+      background-color: $c2
+      background-image: url('./assets/images/select-arrow.png')
+      background-repeat: no-repeat
+      background-position: 79% rem-calc(12)
+      background-size: rem-calc(13) rem-calc(8)
+      padding-left: rem-calc(16)
+      width: rem-calc(90)
+      height: rem-calc(34)
+      -webkit-appearance: none
+
+      &:focus
+        outline: none
