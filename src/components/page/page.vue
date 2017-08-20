@@ -2,7 +2,7 @@
 
 <script>
 // data
-import data from '../../shared/data/fake-data.json'
+// import data from '../../shared/data/fake-data.json'
 
 // components
 import ButtonAdd from 'components/button/button-add/button-add'
@@ -10,11 +10,16 @@ import ButtonExport from 'components/button/button-export/button-export'
 import ButtonImport from 'components/button/button-import/button-import'
 import Products from 'components/products/products'
 import Search from 'components/search/search'
-console.log(data)
+
 export default {
-  data: () => {
+  data () {
     return {
-      props: data
+      props: this.$store.state.products
+    }
+  },
+  computed: {
+    pageSize () {
+      return this.$store.state.pageSize
     }
   },
   components: {

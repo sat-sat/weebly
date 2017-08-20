@@ -17,10 +17,12 @@ Object.keys(customFilters).forEach(key => {
 
 // Vue use
 Vue.use(VeeValidate)
+import store from './shared/store/store'
 
 /* eslint-disable no-new */
 new Vue({
   router,
   template: '<App/>',
+  store: store,
   render: h => h(App)
 }).$mount('#app')

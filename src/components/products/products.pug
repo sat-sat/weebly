@@ -20,7 +20,7 @@
         span
 
     //- product row
-    SingleProduct(v-for='product in props' :props='product')
+    SingleProduct(v-for='product in props' :key='product.id' :props='product')
 
   //- products footer
   .products__footer
