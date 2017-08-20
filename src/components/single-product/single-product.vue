@@ -5,7 +5,10 @@ export default {
   data () {
     return {
       editable: false,
-      name: 'Snapback Hat'
+      name: 'Snapback Hat',
+      type: 'Physical',
+      price: 15.67,
+      inventory: 200
     }
   },
   props: ['props'],
