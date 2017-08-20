@@ -2,6 +2,17 @@
 
 <script>
 export default {
-  props: ['props']
+  data () {
+    return {
+      editable: false,
+      name: 'Snapback Hat'
+    }
+  },
+  props: ['props'],
+  methods: {
+    editToggle () {
+      this.editable = !this.editable
+    }
+  }
 }
 </script>
