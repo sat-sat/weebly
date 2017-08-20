@@ -1,0 +1,44 @@
+.single-product
+  @extend %p1
+
+  // --------------
+
+  td
+
+    &:nth-child(1)
+      width: rem-calc(44)
+
+    &:nth-child(2)
+      width: calc(100% - #{rem-calc(434)})
+
+    &:nth-child(3)
+      width: rem-calc(141)
+
+    &:nth-child(4)
+      width: rem-calc(93)
+
+    &:nth-child(5)
+      width: rem-calc(156)
+
+  // --------------
+
+  &__row
+    color: $c5
+
+  // --------------
+
+  &__checkbox
+    margin-left: rem-calc(10)
+    border: 2px solid $c3
+
+  &__thumb
+    display: inline-block
+    margin: rem-calc(8) rem-calc(10) rem-calc(2) 0
+    border: 1px solid $c3
+    border-radius: rem-calc(3)
+    width: rem-calc(35)
+
+  &__name
+    display: inline-block
+    margin-top: rem-calc(10)
+    vertical-align: top
