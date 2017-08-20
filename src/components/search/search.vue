@@ -2,6 +2,19 @@
 
 <script>
 export default {
-  prosp: ['props']
+  prosp: ['props'],
+  computed: {
+    search (el) {
+      // console.log(el)
+      // this.$store.commit('search')
+      return this.$store.state.search
+    }
+  },
+  methods: {
+    newInput (el) {
+      const str = el.target.value
+      this.$store.commit('search', str)
+    }
+  }
 }
 </script>

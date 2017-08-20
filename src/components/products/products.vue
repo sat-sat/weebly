@@ -14,6 +14,9 @@ export default {
   },
   props: ['props'],
   computed: {
+    search () {
+      return this.$store.state.search
+    },
     currentPage () {
       return this.$store.state.currentPage
     },
@@ -30,6 +33,17 @@ export default {
         return pages
       }
       return pages
+    },
+    filteredItems () {
+      return this.$store.state.products.filter(product => {
+        if (this.$store.state.search === '') {
+          return product.name.indexOf(this.$store.state.search) > -1
+        } else if (isNaN(this.$store.state.search)) {
+          return product.name.toLowerCase().indexOf(this.$store.state.search.toLowerCase()) > -1
+        } else {
+          return product.price.toString().indexOf(this.$store.state.search) > -1
+        }
+      })
     }
   },
   methods: {
