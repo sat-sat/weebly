@@ -1,0 +1,44 @@
+.pagination
+  
+  &__arrow
+    display: inline-block
+    position: relative
+    border: 1px solid $c3
+    border-radius: rem-calc(3)
+    width: rem-calc(34)
+    height: rem-calc(34)
+
+    &--disabled
+      opacity: 0.4
+      pointer-events: none
+
+    img
+      display: inline-block
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: rem-calc(8)
+      height: rem-calc(13)
+
+  &__select
+    display: inline-block
+    margin: 0 rem-calc(8)
+    vertical-align: top
+
+    select
+      @extend %p2
+      border: 1px solid $c3
+      border-radius: rem-calc(3)
+      background-color: $c2
+      background-image: url('./assets/images/select-arrow.png')
+      background-repeat: no-repeat
+      background-position: 79% rem-calc(12)
+      background-size: rem-calc(13) rem-calc(8)
+      padding-left: rem-calc(16)
+      width: rem-calc(88)
+      height: rem-calc(34)
+      -webkit-appearance: none
+
+      &:focus
+        outline: none
