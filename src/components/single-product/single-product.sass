@@ -1,0 +1,61 @@
+.single-product
+  @extend %p1
+  color: $c5
+
+  &--editable
+    background-color: $c7
+
+  // --------------
+
+  td
+
+    &:nth-child(1)
+      width: rem-calc(44)
+
+    &:nth-child(2)
+      width: calc(100% - #{rem-calc(434)})
+
+    &:nth-child(3)
+      width: rem-calc(141)
+
+    &:nth-child(4)
+      width: rem-calc(93)
+
+    &:nth-child(5)
+      width: rem-calc(156)
+
+  // --------------
+
+  &__checkbox
+    margin-left: rem-calc(10)
+    border: 2px solid $c3
+
+  &__thumb
+    display: inline-block
+    margin: rem-calc(8) rem-calc(10) rem-calc(2) 0
+    border: 1px solid $c3
+    border-radius: rem-calc(3)
+    width: rem-calc(35)
+
+  &__name
+    display: inline-block
+    margin-top: rem-calc(10)
+    vertical-align: top
+
+    .single-product--editable &
+      display: none
+
+  &__name-input
+    display: none
+
+    .single-product--editable &
+      display: inline-block
+      margin-top: rem-calc(8)
+      border: 1px solid $c3
+      border-radius: rem-calc(3)
+      padding: 0 rem-calc(10)
+      width: calc(100% - #{rem-calc(60)})
+      height: rem-calc(35)
+      vertical-align: top
+      line-height: rem-calc(35)
+      color: $c5
