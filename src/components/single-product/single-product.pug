@@ -2,12 +2,12 @@ tr.single-product(:class='[ editable ? "single-product--editable" : "" ]')
   td
     input.single-product__checkbox(type='checkbox' @click='editToggle')
   td
-    img.single-product__thumb(src='http://frontend-trial-project.weebly.com/uploads/1/0/5/4/105462933/27890e0eddd8e800fc2c8fc1c434744d.png')
-    .single-product__name {{ name }}
-    input.single-product__name-input(v-model='name')
+    img.single-product__thumb(:src='props.thumbnail')
+    .single-product__name {{ props.name }}
+    input.single-product__name-input(v-model='props.name')
   td
-    .single-product__type {{ type }}
+    .single-product__type {{ props.type }}
   td
-    .single-product__price ${{ price }}
+    .single-product__price ${{ props.price }}
   td
-    .single-product__inventory {{ inventory }}
+    .single-product__inventory {{ props.inventory }}
