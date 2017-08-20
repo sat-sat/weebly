@@ -19,6 +19,10 @@ export default {
       if (this.selected !== this.pages.length) {
         this.selected = this.selected + 1
       }
+    },
+    onSelect (el) {
+      const page = el.target.value
+      this.$store.commit('currentPage', page)
     }
   }
 }

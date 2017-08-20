@@ -4,8 +4,8 @@
     img(src='../../assets/images/arrow-left.png')
 
   .pagination__select
-    select(v-model='selected')
-      option(v-for='(page, index) in pages' :value='index + 1') {{ index + 1 }}
+    select(v-model='selected' @change='onSelect')
+      option(v-for='(page, index) in props' :value='index + 1') {{ index + 1 }}
 
   .pagination__arrow.pagination__arrow--next(:class='[ selected === (pages.length) ? "pagination__arrow--disabled" : "" ]' @click='pageUp')
     img(src='../../assets/images/arrow-right.png')

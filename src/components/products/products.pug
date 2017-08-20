@@ -1,4 +1,6 @@
 .products
+  pre {{pages}}
+  pre {{currentPage}}
 
   table.products__table
     
@@ -20,7 +22,7 @@
         span
 
     //- product row
-    SingleProduct(v-for='product in props' :key='product.id' :props='product')
+    SingleProduct(v-for='(product, index) in props' :key='product.id' :props='product' v-if='isInRange(index)')
 
   //- products footer
   .products__footer
@@ -29,4 +31,13 @@
       PageSize
 
     .products__pagination
-      Pagination
+      //- Pagination(:props='pages')
+      .products__pagination-arrow.products__pagination-arrow--prev(:class='[ currentPage === 1 ? "pagination__arrow--disabled" : "" ]' @click='pageDown')
+        img(src='../../assets/images/arrow-left.png')
+
+      .products__pagination-select
+        select(v-model='currentPage' @change='onSelect')
+          option(v-for='(page, index) in pages' :value='index + 1') {{ index + 1 }}
+
+      .products__pagination-arrow.products__pagination-arrow--next(:class='[ currentPage === (pages) ? "pagination__arrow--disabled" : "" ]' @click='pageUp')
+        img(src='../../assets/images/arrow-right.png')
