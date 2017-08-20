@@ -8,7 +8,8 @@ const store = new Vuex.Store({
   state: {
     products: data,
     pageSize: 5,
-    currentPage: 1
+    currentPage: 1,
+    search: ''
   },
   mutations: {
     pageSize (state, size) {
@@ -25,6 +26,9 @@ const store = new Vuex.Store({
     },
     selectPage (state, page) {
       state.currentPage = Number(page)
+    },
+    search (state, str) {
+      state.search = String(str)
     }
   }
 })
