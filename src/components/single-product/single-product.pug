@@ -6,8 +6,8 @@ tr.single-product(:class='[ editable ? "single-product--editable" : "" ]')
     .single-product__name {{ name }}
     input.single-product__name-input(v-model='name')
   td
-    .single-product__type Physical
+    .single-product__type {{ type }}
   td
-    .single-product__price $15.67
+    .single-product__price ${{ price }}
   td
-    .single-product__inventory 200
+    .single-product__inventory {{ inventory }}
