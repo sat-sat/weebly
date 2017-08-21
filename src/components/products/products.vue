@@ -15,6 +15,7 @@ export default {
   props: ['props'],
   computed: {
     search () {
+      this.$store.commit('newProductList', this.filteredItems)
       return this.$store.state.search
     },
     currentPage () {
@@ -24,7 +25,7 @@ export default {
       return this.$store.state.pageSize
     },
     products () {
-      return this.$store.state.products.length
+      return this.$store.getters.filteredProducts.length
     },
     pages () {
       let pages = Math.floor(this.products / this.pageSize)
@@ -35,15 +36,7 @@ export default {
       return pages
     },
     filteredItems () {
-      return this.$store.state.products.filter(product => {
-        if (this.$store.state.search === '') {
-          return product.name.indexOf(this.$store.state.search) > -1
-        } else if (isNaN(this.$store.state.search)) {
-          return product.name.toLowerCase().indexOf(this.$store.state.search.toLowerCase()) > -1
-        } else {
-          return product.price.toString().indexOf(this.$store.state.search) > -1
-        }
-      })
+      return this.$store.getters.filteredProducts
     }
   },
   methods: {
