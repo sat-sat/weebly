@@ -98,19 +98,15 @@ var webpackConfig = merge(baseWebpackConfig, {
     ]),
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
-      ['/', '/our-practice'],
+      ['/'],
       {
         postProcessHtml: function (context) {
-          var site = 'Site Name | '
-
           var titles = {
-            '/': site + 'Home',
-            '/our-practice': site + 'Our Practice'
+            '/': 'Weebly Frontend Project'
           }
 
           var descriptions = {
-            '/': 'Home page description',
-            '/our-practice': 'Our practice description'
+            '/': 'Weebly Frontend Project Description'
           }
 
           return context.html.replace(
