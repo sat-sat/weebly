@@ -4,20 +4,12 @@
 export default {
   data () {
     return {
-      editable: false,
-      thing: this.props,
-      name: this.props.name
+      editable: false
     }
   },
   props: ['props'],
-  computed: {
-    isChecked () {
-      // this.editable = this.$el.children[0].firstElementChild.checked
-      // console.log()
-    }
-  },
   methods: {
-    editToggle () {
+    editToggle (el) {
       if (!this.editable) {
         this.editable = true
       } else {
@@ -27,10 +19,12 @@ export default {
               this.editable = false
             } else {
               this.editable = true
+              el.target.checked = true
             }
           })
           .catch(() => {
             this.editable = true
+            el.target.checked = true
           })
       }
     }
