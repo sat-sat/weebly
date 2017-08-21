@@ -1,9 +1,6 @@
 <template lang='pug' src='./page.pug'></template>
 
 <script>
-// data
-// import data from '../../shared/data/fake-data.json'
-
 // components
 import ButtonAdd from 'components/button/button-add/button-add'
 import ButtonExport from 'components/button/button-export/button-export'
@@ -16,6 +13,11 @@ export default {
     return {
       props: this.$store.state.products
     }
+  },
+  created () {
+    this.$store.dispatch('getProducts').then(() => {
+      console.log('dispatch action')
+    })
   },
   computed: {
     pageSize () {
