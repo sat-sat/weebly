@@ -1,0 +1,15 @@
+tr.table-header
+  th
+    input.table-header__checkbox(type='checkbox')
+  th(@click='sortAlpha')
+    | Name
+    span(:class='[ sortState === "alphaReverse" ? "reverse" : "" ]')
+  th
+    | Type
+    span
+  th(@click='sortPrice')
+    | Price
+    span(:class='[ sortState === "priceReverse" ? "reverse" : "" ]')
+  th(@click='sortInventory')
+    | Inventory
+    span(:class='[ sortState === "inventoryReverse" ? "reverse" : "" ]')

@@ -5,6 +5,7 @@
 import PageSize from 'components/page-size/page-size'
 import Pagination from 'components/pagination/pagination'
 import SingleProduct from 'components/single-product/single-product'
+import TableHeader from 'components/table-header/table-header'
 
 // directives
 import productsDirective from './products.directive'
@@ -46,27 +47,6 @@ export default {
     }
   },
   methods: {
-    sortAlpha () {
-      if (this.$store.state.sortState === 'alpha') {
-        this.$store.commit('sortState', 'alphaReverse')
-      } else {
-        this.$store.commit('sortState', 'alpha')
-      }
-    },
-    sortPrice () {
-      if (this.$store.state.sortState === 'price') {
-        this.$store.commit('sortState', 'priceReverse')
-      } else {
-        this.$store.commit('sortState', 'price')
-      }
-    },
-    sortInventory () {
-      if (this.$store.state.sortState === 'inventory') {
-        this.$store.commit('sortState', 'inventoryReverse')
-      } else {
-        this.$store.commit('sortState', 'inventory')
-      }
-    },
     isInRange (index) {
       if (this.currentPage === 1) {
         if (index < this.pageSize) {
@@ -98,7 +78,8 @@ export default {
   components: {
     PageSize,
     Pagination,
-    SingleProduct
+    SingleProduct,
+    TableHeader
   },
   directives: {
     productsDirective
