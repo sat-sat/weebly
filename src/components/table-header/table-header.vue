@@ -1,6 +1,9 @@
 <template lang='pug' src='./table-header.pug'></template>
 
 <script>
+// directives
+import tableHeaderDirective from './table-header.directive'
+
 export default {
   props: ['props'],
   computed: {
@@ -30,6 +33,9 @@ export default {
         this.$store.commit('sortState', 'inventory')
       }
     }
+  },
+  directives: {
+    tableHeaderDirective
   }
 }
 </script>

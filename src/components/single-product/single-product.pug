@@ -1,6 +1,6 @@
 tr.single-product(:class='[ editable ? "single-product--editable" : "" ]')
   td
-    input.single-product__checkbox(type='checkbox' @click='editToggle')
+    input.single-product__checkbox(type='checkbox' @click='editToggle', :class='[ editable ? "editable" : "" ]')
   td
     //- pre {{thing}}
     img.single-product__thumb(:src='props.thumbnail')
