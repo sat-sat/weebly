@@ -5,19 +5,13 @@ import Vue from 'vue'
 import App from './base/app'
 import router from './router'
 import VeeValidate from 'vee-validate'
-import * as customFilters from './shared/filters/filters'
+import store from './shared/store/'
 
 // Vue config
 Vue.config.productionTip = false
 
-// Vue filters
-Object.keys(customFilters).forEach(key => {
-  Vue.filter(key, customFilters[key])
-})
-
 // Vue use
 Vue.use(VeeValidate)
-import store from './shared/store/store'
 
 /* eslint-disable no-new */
 new Vue({
