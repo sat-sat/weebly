@@ -26,6 +26,9 @@ const mutations = {
   GET_PRODUCTS (state, products) {
     state.products = products
   },
+  PUT_PRODUCT (state, products) {
+    state.products = products
+  },
   sortState (state, sortBy) {
     state.sortState = sortBy
   }
