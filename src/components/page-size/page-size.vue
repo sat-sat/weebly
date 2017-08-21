@@ -2,7 +2,6 @@
 
 <script>
 export default {
-  props: ['props'],
   methods: {
     onSelect (el) {
       const size = el.target.value

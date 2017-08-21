@@ -5,7 +5,6 @@
 import tableHeaderDirective from './table-header.directive'
 
 export default {
-  props: ['props'],
   computed: {
     sortState () {
       return this.$store.state.sortState

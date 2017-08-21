@@ -2,11 +2,8 @@
 
 <script>
 export default {
-  prosp: ['props'],
   computed: {
     search (el) {
-      // console.log(el)
-      // this.$store.commit('search')
       return this.$store.state.search
     }
   },
