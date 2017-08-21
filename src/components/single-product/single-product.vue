@@ -5,16 +5,34 @@ export default {
   data () {
     return {
       editable: false,
-      name: 'Snapback Hat',
-      type: 'Physical',
-      price: 15.67,
-      inventory: 200
+      thing: this.props,
+      name: this.props.name
     }
   },
   props: ['props'],
+  computed: {
+    isChecked () {
+      // this.editable = this.$el.children[0].firstElementChild.checked
+      // console.log()
+    }
+  },
   methods: {
     editToggle () {
-      this.editable = !this.editable
+      if (!this.editable) {
+        this.editable = true
+      } else {
+        this.$validator.validateAll()
+          .then(result => {
+            if (result) {
+              this.editable = false
+            } else {
+              this.editable = true
+            }
+          })
+          .catch(() => {
+            this.editable = true
+          })
+      }
     }
   }
 }

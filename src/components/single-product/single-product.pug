@@ -2,12 +2,17 @@ tr.single-product(:class='[ editable ? "single-product--editable" : "" ]')
   td
     input.single-product__checkbox(type='checkbox' @click='editToggle')
   td
+    //- pre {{thing}}
     img.single-product__thumb(:src='props.thumbnail')
     .single-product__name {{ props.name }}
-    input.single-product__name-input(v-model='props.name')
+    input.single-product__input.single-product__input--name(v-model='props.name', v-validate="'required|alpha_spaces'", :class="{ 'single-product__input--error': errors.has('name') }" name='name')
   td
     .single-product__type {{ props.type }}
+    select.single-product__select-type()
+      option(:value='props.type') {{ props.type }}
   td
     .single-product__price ${{ props.price }}
+    input.single-product__input.single-product__input--price(v-model='props.price', v-validate="'required|decimal'", :class="{ 'single-product__input--error': errors.has('price') }" name='price')
   td
     .single-product__inventory {{ props.inventory }}
+    input.single-product__inventory-input.single-product__input.single-product__input--inventory(v-model='props.inventory', v-validate="'required|numeric'", :class="{ 'single-product__input--error': errors.has('inventory') }" name='inventory')

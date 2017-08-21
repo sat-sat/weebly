@@ -6,6 +6,9 @@ import PageSize from 'components/page-size/page-size'
 import Pagination from 'components/pagination/pagination'
 import SingleProduct from 'components/single-product/single-product'
 
+// directives
+import productsDirective from './products.directive'
+
 export default {
   data: () => {
     return {
@@ -72,6 +75,9 @@ export default {
     PageSize,
     Pagination,
     SingleProduct
+  },
+  directives: {
+    productsDirective
   }
 }
 </script>
