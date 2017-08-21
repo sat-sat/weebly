@@ -20,8 +20,14 @@ const mutations = {
   newProductList (state, obj) {
     state.products === obj
   },
+  sortAlpha (state) {
+    state.products.slice().sort()
+  },
   GET_PRODUCTS (state, products) {
     state.products = products
+  },
+  sortState (state, sortBy) {
+    state.sortState = sortBy
   }
 }
 

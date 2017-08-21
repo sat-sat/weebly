@@ -12,7 +12,8 @@ const store = new Vuex.Store({
     products: [],
     pageSize: 5,
     currentPage: 1,
-    search: ''
+    search: '',
+    sortState: ''
   },
   mutations: mutations,
   getters: getters,

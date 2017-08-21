@@ -17,18 +17,12 @@ export default {
   },
   props: ['props'],
   computed: {
+    products () {
+      return this.$store.getters.filteredProducts.length
+    },
     search () {
       this.$store.commit('newProductList', this.filteredItems)
       return this.$store.state.search
-    },
-    currentPage () {
-      return this.$store.state.currentPage
-    },
-    pageSize () {
-      return this.$store.state.pageSize
-    },
-    products () {
-      return this.$store.getters.filteredProducts.length
     },
     pages () {
       let pages = Math.floor(this.products / this.pageSize)
@@ -38,11 +32,41 @@ export default {
       }
       return pages
     },
+    pageSize () {
+      return this.$store.state.pageSize
+    },
+    currentPage () {
+      return this.$store.state.currentPage
+    },
     filteredItems () {
       return this.$store.getters.filteredProducts
+    },
+    sortState () {
+      return this.$store.state.sortState
     }
   },
   methods: {
+    sortAlpha () {
+      if (this.$store.state.sortState === 'alpha') {
+        this.$store.commit('sortState', 'alphaReverse')
+      } else {
+        this.$store.commit('sortState', 'alpha')
+      }
+    },
+    sortPrice () {
+      if (this.$store.state.sortState === 'price') {
+        this.$store.commit('sortState', 'priceReverse')
+      } else {
+        this.$store.commit('sortState', 'price')
+      }
+    },
+    sortInventory () {
+      if (this.$store.state.sortState === 'inventory') {
+        this.$store.commit('sortState', 'inventoryReverse')
+      } else {
+        this.$store.commit('sortState', 'inventory')
+      }
+    },
     isInRange (index) {
       if (this.currentPage === 1) {
         if (index < this.pageSize) {

@@ -16,7 +16,6 @@ export default {
   },
   created () {
     this.$store.dispatch('getProducts').then(() => {
-      console.log('dispatch action')
     })
   },
   computed: {
