@@ -7,9 +7,6 @@ import Pagination from 'components/pagination/pagination'
 import SingleProduct from 'components/single-product/single-product'
 import TableHeader from 'components/table-header/table-header'
 
-// directives
-import productsDirective from './products.directive'
-
 export default {
   data: () => {
     return {
@@ -80,9 +77,6 @@ export default {
     Pagination,
     SingleProduct,
     TableHeader
-  },
-  directives: {
-    productsDirective
   }
 }
 </script>
