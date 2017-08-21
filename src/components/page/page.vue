@@ -15,8 +15,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getProducts').then(() => {
-    })
+    this.$store.dispatch('getProducts')
   },
   computed: {
     pageSize () {

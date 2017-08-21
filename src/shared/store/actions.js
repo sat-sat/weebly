@@ -10,6 +10,27 @@ const actions = {
       .catch(e => {
         console.log(e)
       })
+  },
+  putProduct ({ commit }, product) {
+    Axios
+      .put(api + '/product/' + product.id, {
+        'name': product.name,
+        'type': product.type,
+        'price': product.price,
+        'inventory': product.inventory,
+        'thumbnail': product.thumbnail
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        commit('PUT_PRODUCT', response.data)
+        console.log(response)
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 }
 
