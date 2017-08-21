@@ -1,26 +1,28 @@
 .products
 
+  pre {{sortState}}
+
   table.products__table
     
     //- header row
     tr.products__header-row
       th
-        input.products__checkbox(type='checkbox')
+        input.products__checkbox(type='checkbox' v-products-directive='')
       th(@click='sortAlpha')
         | Name
         span
       th
         | Type
         span
-      th
+      th(@click='sortPrice')
         | Price
         span
-      th
+      th(@click='sortInventory')
         | Inventory
         span
 
     //- product row
-    SingleProduct(v-for='(product, index) in filteredItems' :key='product.id' :props='product' v-if='isInRange(index)')
+    SingleProduct(v-for='(product, index) in filteredItems' :key='product.id' :props='product' v-show='isInRange(index)')
 
   //- products footer
   .products__footer

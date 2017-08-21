@@ -14,6 +14,10 @@ export default {
       props: this.$store.state.products
     }
   },
+  created () {
+    this.$store.dispatch('getProducts').then(() => {
+    })
+  },
   computed: {
     pageSize () {
       return this.$store.state.pageSize

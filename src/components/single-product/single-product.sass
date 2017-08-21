@@ -30,6 +30,48 @@
     margin-left: rem-calc(10)
     border: 2px solid $c3
 
+  &__input
+    display: none
+    position: relative
+    margin-top: rem-calc(8)
+    border: 1px solid $c3
+    border-radius: rem-calc(3)
+    padding: 0 rem-calc(10)
+    height: rem-calc(35)
+    vertical-align: top
+    line-height: rem-calc(35)
+    color: $c5
+
+    .single-product--editable &
+      display: inline-block
+
+    &--name
+      .single-product--editable &
+        width: calc(100% - #{rem-calc(105)})
+
+    &--price
+
+      .single-product--editable &
+        display: block
+        left: rem-calc(-20)
+        background-image: url('./assets/images/dollar-icon.png')
+        background-repeat: no-repeat
+        background-position: rem-calc(10) rem-calc(10)
+        background-size: rem-calc(7) rem-calc(13)
+        padding: 0 rem-calc(4) 0 rem-calc(20)
+        width: rem-calc(90)
+        text-align: right
+
+    &--inventory
+
+      .single-product--editable &
+        display: block
+        width: rem-calc(80)
+        text-align: right
+
+    &--error
+      border-color: $c8
+
   &__thumb
     display: inline-block
     margin: rem-calc(8) rem-calc(10) rem-calc(2) 0
@@ -45,17 +87,42 @@
     .single-product--editable &
       display: none
 
-  &__name-input
+  &__type
+    display: block
+
+    .single-product--editable &
+      display: none
+
+  &__select-type
     display: none
 
     .single-product--editable &
-      display: inline-block
-      margin-top: rem-calc(8)
+      display: block
+      position: relative
+      left: rem-calc(-47)
       border: 1px solid $c3
       border-radius: rem-calc(3)
-      padding: 0 rem-calc(10)
-      width: calc(100% - #{rem-calc(60)})
-      height: rem-calc(35)
-      vertical-align: top
-      line-height: rem-calc(35)
-      color: $c5
+      background-color: $c2
+      background-image: url('./assets/images/select-arrow.png')
+      background-repeat: no-repeat
+      background-position: 85% rem-calc(12)
+      background-size: rem-calc(13) rem-calc(8)
+      padding-left: rem-calc(12)
+      width: rem-calc(110)
+      height: rem-calc(34)
+      -webkit-appearance: none
+
+      &:focus
+        outline: none
+
+  &__price
+    display: block
+
+    .single-product--editable &
+      display: none
+
+  &__inventory
+    display: block
+
+    .single-product--editable &
+      display: none

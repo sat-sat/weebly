@@ -6,6 +6,9 @@ import PageSize from 'components/page-size/page-size'
 import Pagination from 'components/pagination/pagination'
 import SingleProduct from 'components/single-product/single-product'
 
+// directives
+import productsDirective from './products.directive'
+
 export default {
   data: () => {
     return {
@@ -37,12 +40,32 @@ export default {
     },
     filteredItems () {
       return this.$store.getters.filteredProducts
+    },
+    sortState () {
+      return this.$store.state.sortState
     }
   },
   methods: {
     sortAlpha () {
-      console.log('hey')
-      this.filteredItems.sort()
+      if (this.$store.state.sortState === 'alpha') {
+        this.$store.commit('sortState', 'alphaReverse')
+      } else {
+        this.$store.commit('sortState', 'alpha')
+      }
+    },
+    sortPrice () {
+      if (this.$store.state.sortState === 'price') {
+        this.$store.commit('sortState', 'priceReverse')
+      } else {
+        this.$store.commit('sortState', 'price')
+      }
+    },
+    sortInventory () {
+      if (this.$store.state.sortState === 'inventory') {
+        this.$store.commit('sortState', 'inventoryReverse')
+      } else {
+        this.$store.commit('sortState', 'inventory')
+      }
     },
     isInRange (index) {
       if (this.currentPage === 1) {
@@ -76,6 +99,9 @@ export default {
     PageSize,
     Pagination,
     SingleProduct
+  },
+  directives: {
+    productsDirective
   }
 }
 </script>
