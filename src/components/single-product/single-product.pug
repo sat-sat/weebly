@@ -2,7 +2,6 @@ tr.single-product(:class='[ editable ? "single-product--editable" : "" ]')
   td
     input.single-product__checkbox(type='checkbox' @click='editToggle', :class='[ editable ? "editable" : "" ]')
   td
-    //- pre {{thing}}
     img.single-product__thumb(:src='props.thumbnail')
     .single-product__name {{ props.name }}
     input.single-product__input.single-product__input--name(v-model='props.name', v-validate="'required|alpha_spaces'", :class="{ 'single-product__input--error': errors.has('name') }" name='name')
