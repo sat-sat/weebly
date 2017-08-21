@@ -1,9 +1,6 @@
 <template lang='pug' src='./page.pug'></template>
 
 <script>
-// data
-// import data from '../../shared/data/fake-data.json'
-
 // components
 import ButtonAdd from 'components/button/button-add/button-add'
 import ButtonExport from 'components/button/button-export/button-export'

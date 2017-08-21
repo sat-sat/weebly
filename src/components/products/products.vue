@@ -14,18 +14,12 @@ export default {
   },
   props: ['props'],
   computed: {
+    products () {
+      return this.$store.getters.filteredProducts.length
+    },
     search () {
       this.$store.commit('newProductList', this.filteredItems)
       return this.$store.state.search
-    },
-    currentPage () {
-      return this.$store.state.currentPage
-    },
-    pageSize () {
-      return this.$store.state.pageSize
-    },
-    products () {
-      return this.$store.getters.filteredProducts.length
     },
     pages () {
       let pages = Math.floor(this.products / this.pageSize)
@@ -35,11 +29,21 @@ export default {
       }
       return pages
     },
+    pageSize () {
+      return this.$store.state.pageSize
+    },
+    currentPage () {
+      return this.$store.state.currentPage
+    },
     filteredItems () {
       return this.$store.getters.filteredProducts
     }
   },
   methods: {
+    sortAlpha () {
+      console.log('hey')
+      this.filteredItems.sort()
+    },
     isInRange (index) {
       if (this.currentPage === 1) {
         if (index < this.pageSize) {
